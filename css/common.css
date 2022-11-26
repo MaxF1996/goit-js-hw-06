@@ -24,16 +24,28 @@ button {
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-
   list-style-type: none;
   padding: 0;
 }
 
-.gallery li {
-  flex: 1 1 calc((100% - 60px) / 3);
+@media screen and (max-width: 767px) {
+  .gallery li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .gallery img {
