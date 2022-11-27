@@ -10,7 +10,9 @@ const createButton = document.querySelector('[data-create]');
 const destroyButton = document.querySelector('[data-destroy]');
 
 const createBoxes = amount => {
-  destroyBoxes();
+  if (boxes.firstChild) {
+    destroyBoxes();
+  }
 
   amount = +document.querySelector('#controls >[type="number"]').value;
 
